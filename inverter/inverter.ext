@@ -1,0 +1,23 @@
+timestamp 1664280310
+version 8.2
+tech scmos
+style lambda=1.0(scna20_orb)
+scale 1000 1 100
+resistclasses 26670 59550 23860 19690 27260 2000000 49 26 2505830
+node "GND" 96 7332 -7 -22 ndiff 48 28 16 16 0 0 0 0 0 0 0 0 196 92 0 0 0 0
+equiv "GND" "ndcontact"
+node "pdcontact" 274 1692 1 -22 ndiff 48 28 144 60 0 0 0 0 0 0 0 0 128 72 0 0 0 0
+equiv "pdcontact" "out"
+equiv "pdcontact" "ndcontact"
+node "poly" 561 4362 -5 -11 pc 0 0 0 0 110 106 0 0 0 0 0 0 16 16 0 0 0 0
+equiv "poly" "in"
+node "pdcontact" 5277 8084 -9 -5 nw 16 16 144 60 0 0 0 0 0 0 0 0 264 126 0 0 648 108
+equiv "pdcontact" "VDD"
+equiv "pdcontact" "nsubstratencontact"
+equiv "pdcontact" "nwell"
+equiv "pdcontact" "pdiffusion"
+cap "pdcontact" "pdcontact" 376
+cap "pdcontact" "poly" 1432
+device mosfet nfet -1 -22 0 -21 2 8 "Gnd!" "poly" 4 0 "GND" 8 0 "pdcontact" 8 0
+device mosfet pfet -1 -3 0 -2 2 24 "pdcontact" "poly" 4 0 "pdcontact" 24 0 "pdcontact" 24 0
+subcap "pdcontact" -846

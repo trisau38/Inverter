@@ -1,0 +1,20 @@
+.title Inverter
+.include techfile130.txt
+
+vdd vdd 0 1.2
+
+
+vin vi 0 PULSE(0 1.2 2NS 2NS 2NS 50NS 100NS)
+
+
+Mp vout vi vdd vdd pmos l=120n w=960n 
+Mn vout vi 0 0 nmos l=120n w=480n
+
+//.tran 0.1n 500n 0 0.1n
+.dc vin 0 1.2 0.1 
+
+.control
+run 
+plot v(vi) v(vout)
+.endc
+.end
